@@ -1,0 +1,126 @@
+generated: '2026-08-28'
+method: probed
+source: live GET probes of /.well-known/* on every SmartMore host reachable from apis.yml
+note: >-
+  Every /.well-known/ path probed returned a hard 404 on every SmartMore host. No document was
+  fetched and none was saved, so hit_count is 0 and NO WellKnown or SecurityTxt pointer is wired
+  into apis.yml — this file records a verified absence, not a served surface. Separately worth
+  recording for future rounds: the SmartMore web platform answers HTTP 200 with an empty body for
+  arbitrary non-.well-known paths (e.g. /openapi.json, /llms.txt, /swagger.json all 200 via a 302
+  chain with 0 bytes) and serves a soft-404 — HTTP 200 carrying a "page has gone to another planet"
+  error body — for arbitrary .html paths. Neither behaviour is a document; both are catch-alls.
+hit_count: 0
+hosts:
+- host: https://global.smartmore.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  soft_404_control:
+    path: /.well-known/ae-control-does-not-exist
+    status: 404
+    bytes: 146
+    note: control path returns the same hard 404 as the probes, so the 404s above are real negatives
+- host: https://inside.smartmore.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  soft_404_control:
+    path: /.well-known/ae-control-does-not-exist
+    status: 404
+    bytes: 146
+- host: https://cn.smartmore.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: null
+    file: null
+    note: '<no response> — connection timed out after 10s; one attempt only, not retried'
+- host: https://www.smartmore.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+unreachable_hosts:
+- host: api.smartmore.com
+  result: DNS does not resolve
+- host: developer.smartmore.com
+  result: DNS does not resolve
+- host: docs.smartmore.com
+  result: DNS does not resolve
+- host: vimo.smartmore.com
+  result: DNS does not resolve
+- host: cloud.smartmore.com
+  result: DNS does not resolve
+- host: open.smartmore.com
+  result: DNS does not resolve
+- host: console.smartmore.com
+  result: DNS does not resolve
+- host: en.smartmore.com
+  result: DNS does not resolve

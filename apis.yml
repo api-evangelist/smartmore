@@ -1,17 +1,38 @@
 aid: smartmore
 name: SmartMore
-description: 'SmartMore is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  SmartMore Corporation (思谋科技) is a Hong Kong- and Shenzhen-headquartered industrial AI and machine
+  vision company founded in 2019, building products and solutions for smart manufacturing and digital
+  innovation. Its flagship SMore ViMo platform bundles ViMo Cloud, ViMo Deeplearning and ViMo Studio
+  into a low-code industrial vision stack covering data management, model training, visual solution
+  design and production-line deployment, and is sold alongside first-party hardware — industrial smart
+  cameras, barcode readers (VS600/VS800P/VS1000/VS2000), vision sensors (VN2000/VN4000) and lenses —
+  through the SmartMoreInside sub-brand. The company also markets digital platforms (Light3D, Data,
+  Gauge, AIoT) and industrial large models (IndustryGPT, SMore LrMo). SmartMore states it has filed
+  400+ global patent applications with 200+ granted, served 200+ enterprise customers, and reached
+  unicorn status on a Series B that exceeded USD 200 million in 2021, with R&D and business centers in
+  Hong Kong, Shenzhen, Shanghai, Suzhou, Tokyo, Beijing, Hangzhou and Singapore. As of this pass the
+  company publishes no public developer program, API reference or machine-readable contract; ViMo model
+  export to an SDK is described in marketing copy but is delivered with the licensed product rather
+  than documented publicly.
+image: https://global.smartmore.com/upload/sysconfigs/2024-02/65dff166cb8a2.png
 url: https://raw.githubusercontent.com/api-evangelist/smartmore/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-28'
 modified: '2026-08-28'
 tags:
 - Company
+- Industrial AI
+- Machine Vision
+- Computer Vision
+- Smart Manufacturing
+- Quality Inspection
+- Deep Learning
+- Industrial Automation
+- Edge AI
+- Hardware
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +41,50 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.hiive.com/securities/smartmore-stock
+  url: https://global.smartmore.com/
+- type: About
+  url: https://global.smartmore.com/company.html
+- type: Support
+  url: https://global.smartmore.com/contact-us.html
+- type: Blog
+  url: https://global.smartmore.com/blogs.html
+- type: News
+  url: https://global.smartmore.com/news.html
+- type: TermsOfService
+  url: https://global.smartmore.com/terms-of-use.html
+- type: PrivacyPolicy
+  url: https://global.smartmore.com/privacy.html
+- type: LLMsTxt
+  url: llms/smartmore-llms.txt
+- type: DomainSecurity
+  url: security/smartmore-domain-security.yml
+x-enrichment:
+  date: '2026-08-28'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    SmartMore sells the SMore ViMo vision platform and its own camera/sensor hardware as licensed
+    end-user products and publishes no developer surface at all — api., developer. and docs.smartmore.com
+    do not resolve in DNS, every /.well-known/ path on global., inside., cn. and www.smartmore.com
+    returns a hard 404, no OpenAPI/Swagger/GraphQL/AsyncAPI contract exists on any host, and the
+    "export to SDK" ViMo Deeplearning advertises has no public download, reference, or package in npm,
+    PyPI or crates.io. (The platform answers HTTP 200 with an empty body for arbitrary non-existent
+    file paths, so a 200 from these hosts is a catch-all, not a document.)
+  evidence:
+  - url: https://developer.smartmore.com/
+    status: 0
+  - url: https://api.smartmore.com/
+    status: 0
+  - url: https://global.smartmore.com/.well-known/api-catalog
+    status: 404
+  - url: https://global.smartmore.com/.well-known/agent-card.json
+    status: 404
+  - url: https://inside.smartmore.com/.well-known/security.txt
+    status: 404
+  - url: https://global.smartmore.com/company.html
+    status: 200
+  checked: '2026-08-28'
