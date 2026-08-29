@@ -15,6 +15,17 @@ description: >-
   company publishes no public developer program, API reference or machine-readable contract; ViMo model
   export to an SDK is described in marketing copy but is delivered with the licensed product rather
   than documented publicly.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://global.smartmore.com/upload/sysconfigs/2024-02/65dff166cb8a2.png
 url: https://raw.githubusercontent.com/api-evangelist/smartmore/refs/heads/main/apis.yml
 x-type: company
